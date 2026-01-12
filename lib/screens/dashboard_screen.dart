@@ -89,8 +89,6 @@ class DashboardScreen extends StatelessWidget {
             ),
 
             SizedBox(height: 20),
-
-            // KARTU POIN
             Container(
               width: double.infinity,
               margin: EdgeInsets.symmetric(horizontal: 20),
@@ -245,4 +243,5 @@ class DashboardScreen extends StatelessWidget {
       },
     );
   }
+
 }
