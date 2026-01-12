@@ -7,7 +7,6 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   
   final prefs = await SharedPreferences.getInstance();
-  // Kita ambil status login-nya
   final bool isLoggedIn = prefs.getBool('isLoggedIn') ?? false;
 
   runApp(
@@ -19,7 +18,7 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
-  final bool isLoggedIn; // Tambahkan ini
+  final bool isLoggedIn; 
   const MyApp({super.key, required this.isLoggedIn}); 
   @override
   Widget build(BuildContext context) {
@@ -91,3 +90,4 @@ class WasteProvider with ChangeNotifier {
   }
 
 }
+
