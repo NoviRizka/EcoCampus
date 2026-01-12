@@ -22,7 +22,6 @@ class _InputSampahScreenState extends State<InputSampahScreen> {
   void updatePoin(String value) {
     setState(() {
       double berat = double.tryParse(value) ?? 0;
-      // Rumus: Berat x 100
       estimasi = (berat * 100).toInt();
     });
   }
@@ -178,3 +177,4 @@ class _InputSampahScreenState extends State<InputSampahScreen> {
   }
 
 }
+
