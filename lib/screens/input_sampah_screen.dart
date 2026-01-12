@@ -13,14 +13,12 @@ class _InputSampahScreenState extends State<InputSampahScreen> {
   String? jenisTerpilih;
   int estimasi = 0;
 
-  // Daftar kategori sampah yang umum di kampus
   final List<String> daftarJenis = [
     "Plastik (Botol/Gelas)",
     "Kertas/Karton",
     "Kaleng/Logam",
   ];
 
-  // FUNGSI PERHITUNGAN: 1 KG = 100 POIN
   void updatePoin(String value) {
     setState(() {
       double berat = double.tryParse(value) ?? 0;
@@ -47,7 +45,6 @@ class _InputSampahScreenState extends State<InputSampahScreen> {
             ),
             const SizedBox(height: 15),
 
-            // Choice Chips untuk pilihan jenis (Modern)
             Wrap(
               spacing: 8,
               runSpacing: 8,
@@ -77,7 +74,6 @@ class _InputSampahScreenState extends State<InputSampahScreen> {
             ),
             const SizedBox(height: 10),
             
-            // Input Berat
             TextField(
               controller: beratController,
               keyboardType: const TextInputType.numberWithOptions(decimal: true),
@@ -101,7 +97,6 @@ class _InputSampahScreenState extends State<InputSampahScreen> {
 
             const SizedBox(height: 40),
 
-            // CARD ESTIMASI POIN
             Container(
               width: double.infinity,
               padding: const EdgeInsets.all(25),
@@ -145,7 +140,6 @@ class _InputSampahScreenState extends State<InputSampahScreen> {
 
             const SizedBox(height: 40),
 
-            // Tombol ke Peta
             SizedBox(
               width: double.infinity,
               height: 55,
@@ -182,4 +176,5 @@ class _InputSampahScreenState extends State<InputSampahScreen> {
       ),
     );
   }
+
 }
