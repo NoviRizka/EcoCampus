@@ -12,8 +12,7 @@ void main() async {
 
   runApp(
     ChangeNotifierProvider(
-      create: (context) => WasteProvider(),
-      // Kita kirim status login ke MyApp agar variabelnya terpakai
+      create: (context) => WasteProvider()
       child: MyApp(isLoggedIn: isLoggedIn),
     ),
   );
@@ -21,8 +20,7 @@ void main() async {
 
 class MyApp extends StatelessWidget {
   final bool isLoggedIn; // Tambahkan ini
-  const MyApp({super.key, required this.isLoggedIn}); // Masukkan ke constructor
-
+  const MyApp({super.key, required this.isLoggedIn}); 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -32,13 +30,11 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.green,
         useMaterial3: true,
       ),
-      // Splash Screen tetap jadi yang pertama muncul
       home: const SplashScreen(), 
     );
   }
 }
 
-// --- PROVIDER DATA (Tetap Sama) ---
 class WasteProvider with ChangeNotifier {
   List<Map<String, dynamic>> _dataSampah = [];
   List<Map<String, dynamic>> _riwayatTukar = [];
@@ -93,4 +89,5 @@ class WasteProvider with ChangeNotifier {
   void _hitungTotalPoin() {
     _totalPoin = _dataSampah.fold(0, (sum, item) => sum + (item['poin'] as int));
   }
+
 }
