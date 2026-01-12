@@ -32,7 +32,6 @@ class AccountScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            // Header Profil
             Container(
               padding: const EdgeInsets.all(30),
               width: double.infinity,
@@ -73,7 +72,6 @@ class AccountScreen extends StatelessWidget {
               ),
             ),
 
-            // --- PILIHAN PENUKARAN (MAKANAN & MINUMAN TAMBAHAN) ---
             _buildRedeemTile(context, provider, "Voucher Es Teh Manis", 300, Icons.local_drink, Colors.orange),
             _buildRedeemTile(context, provider, "Voucher Snack Ringan", 400, Icons.fastfood, Colors.orange),
             _buildRedeemTile(context, provider, "Voucher Ayam Geprek", 1000, Icons.flatware, Colors.orange),
@@ -89,7 +87,6 @@ class AccountScreen extends StatelessWidget {
               ),
             ),
 
-            // RIWAYAT VOUCHER
             provider.riwayatTukar.isEmpty
                 ? const Padding(
                     padding: EdgeInsets.symmetric(vertical: 40),
@@ -151,7 +148,6 @@ class AccountScreen extends StatelessWidget {
     );
   }
 
-  // --- WIDGET TILE PENUKARAN ---
   Widget _buildRedeemTile(BuildContext context, WasteProvider provider, String nama, int harga, IconData icon, Color color) {
     bool cukup = provider.totalPoin >= harga;
     
@@ -191,4 +187,5 @@ class AccountScreen extends StatelessWidget {
       ),
     );
   }
+
 }
